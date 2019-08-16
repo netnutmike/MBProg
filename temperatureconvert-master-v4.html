@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Convert Temperature</title>
+</head>
+
+<body>
+<script>
+	function celsiusToFahrenheit(celsius) {
+		var celsius = document.getElementById("Celsius").value;
+	  	var celsiusInF = (celsius*9)/5 + 32;
+	  	var outputtext = celsius + '°C is ' + celsiusInF + '°F';
+		document.getElementById("converttext").innerHTML = outputtext;
+	}
+
+	function fahrenheitToCelsius() {
+		var fahrenheit = document.getElementById("Fahrenheit").value;
+	  	var fahrenheitInC = ((fahrenheit - 32)*5)/9;
+	  	var outputtext = fahrenheit + '°F is ' + fahrenheitInC + '°C';
+		document.getElementById("converttext").innerHTML = outputtext;
+	}
+	
+	function clearInputCelsius() {
+		document.getElementById("Celsius").value = "";
+		clearAnswers();
+		console.log("1");
+	}
+	
+	function clearInputFahrenheit() {
+		document.getElementById("Fahrenheit").value = "";
+		clearAnswers();
+		console.log("2");
+	}
+	
+	function clearAnswers() {
+		document.getElementById("converttext").innerHTML = "";
+	}
+</script>
+	
+<h1> Convert Temperature </h1>
+	<p>
+	<table>
+		<tr>
+			<td>Fahrenheit:</td>
+			<td><input type="text" Name="Fahrenheit" ID="Fahrenheit" onKeyUp="clearInputCelsius()" /></td>
+			<td><input type="button" value="Calculate" onclick="fahrenheitToCelsius()"/></td>
+		</tr>
+		<tr>
+			<td>Celsius:</td>
+			<td><input type="text" Name="Celsius" ID="Celsius" onKeyUp="clearInputFahrenheit()" /></td>
+			<td><input type="button" value="Calculate" onclick="celsiusToFahrenheit()"/></td>
+		</tr>
+	</table>
+	</p>
+
+<p><div id="converttext"></div></p>
+</body>
+</html>

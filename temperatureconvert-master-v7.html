@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Convert Temperature</title>
+</head>
+
+<body>
+<script>
+	function celsiusToFahrenheit(celsius) {
+		var celsius = document.getElementById("Celsius").value;
+	  	var celsiusInF = (celsius*9)/5 + 32;
+	  	var outputtext = celsius + '°C is ' + celsiusInF.toFixed(1) + '°F';
+		document.getElementById("converttext").innerHTML = outputtext;
+		document.getElementById("Fahrenheit").value = celsiusInF.toFixed(1);
+		document.getElementById("Fahrenheit").style.backgroundColor = "#00FFFF";
+        document.getElementById("Celsius").style.backgroundColor = "#FCF508";
+	}
+
+	function fahrenheitToCelsius() {
+		var fahrenheit = document.getElementById("Fahrenheit").value;
+	  	var fahrenheitInC = ((fahrenheit - 32)*5)/9;
+	  	var outputtext = fahrenheit + '°F is ' + fahrenheitInC.toFixed(1) + '°C';
+		document.getElementById("converttext").innerHTML = outputtext;
+		document.getElementById("Celsius").value = fahrenheitInC.toFixed(1);
+		document.getElementById("Celsius").style.backgroundColor = "#00FFFF";
+        document.getElementById("Fahrenheit").style.backgroundColor = "#FCF508";
+        
+	}
+	
+</script>
+	
+<h1> Convert Temperature </h1>
+	<p>
+	<table>
+		<tr>
+			<td>Fahrenheit:</td>
+			<td><input type="text" Name="Fahrenheit" ID="Fahrenheit" onKeyUp="fahrenheitToCelsius()" /></td>
+		</tr>
+		<tr>
+			<td>Celsius:</td>
+			<td><input type="text" Name="Celsius" ID="Celsius" onKeyUp="celsiusToFahrenheit()" /></td>
+			
+		</tr>
+	</table>
+	</p>
+
+<p><div id="converttext"></div></p>
+</body>
+</html>
